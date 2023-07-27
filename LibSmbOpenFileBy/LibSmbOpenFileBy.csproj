@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net45</TargetFrameworks>
+
+    <PackageId>HiraokaHyperTools.LibSmbOpenFileBy</PackageId>
+    <Version>0.1.0</Version>
+    <Authors>kenjiuno</Authors>
+    <Company>HIRAOKA HYPERS TOOLS, Inc.</Company>
+    <Description>Enumerate all `MSFT_SmbOpenFile` objects under `Root\Microsoft\Windows\SMB`</Description>
+    <!-- https://spdx.org/licenses/ -->
+    <PackageLicenseExpression>BSD-2-Clause</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/HiraokaHyperTools/LibSmbOpenFileBy</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/HiraokaHyperTools/LibSmbOpenFileBy.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackRelease>true</PackRelease>
+  </PropertyGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
+    <Reference Include="System.Management" />
+  </ItemGroup>
+  <ItemGroup Condition=" '$(TargetFramework)' != 'net45' ">
+    <PackageReference Include="System.Management" Version="4.7.0" />
+  </ItemGroup>
+</Project>
